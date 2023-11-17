@@ -1,4 +1,4 @@
 public interface Meeting {
 
-    public abstract void meet();
+    public abstract void meet(Humain h);
 }
