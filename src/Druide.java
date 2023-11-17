@@ -8,4 +8,10 @@ public class Druide extends Gaulois{
         Random r = new Random();
         this.potion = r.nextInt(min,max);
     }
+
+    public void preparerPotion(Gaulois g){
+        if (g.getForce()<5){
+            g.setForce(g.getForce()+potion);
+        }
+    }
 }
