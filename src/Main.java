@@ -22,7 +22,7 @@ public class Main {
         Romain caius = new Romain ("Caius Obtus", Grade.CHEF);
         CampRomain campRomain=new CampRomain(caius);
 
-        campRomain.addRomain(new Romain("Brutus", Grade.CENTURION);
+        campRomain.addRomain(new Romain("Brutus", Grade.CENTURION));
         campRomain.addRomain(new Romain("Briseradius",Grade.LEGIONNAIRE));
         campRomain.addRomain(new Romain("Caligula", Grade.LEGIONNAIRE));
         campRomain.addRomain(new Romain("Minus", Grade.LEGIONNAIRE));
