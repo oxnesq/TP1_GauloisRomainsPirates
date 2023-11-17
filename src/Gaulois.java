@@ -1,10 +1,8 @@
-public class Gaulois {
-    private String nom;
+public class Gaulois extends Humain {
     private int force;
     private String metier;
-
     public Gaulois(String nom, String metier){
-        this.nom=nom;
+        super(nom);
         this.metier=metier;
         if (nom=="Obélix"){
             this.force=15;
