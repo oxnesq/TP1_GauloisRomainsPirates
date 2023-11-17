@@ -23,6 +23,11 @@ public class Humain {
         this.force = force;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Humain{" +
+                "nom='" + nom + '\'' +
+                ", force=" + force +
+                '}';
+    }
 }
