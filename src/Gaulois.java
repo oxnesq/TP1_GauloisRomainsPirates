@@ -14,4 +14,8 @@ public class Gaulois extends Humain implements Meeting{
         String hello="Bonjour, je suis "+ this.getNom() +"\n Bonjour" +this.getNom() +", moi c’est " + g.getNom();
     }
 
+    public String toString(){
+        return "Gaulois :"+this.getNom();
+    }
+
 }
