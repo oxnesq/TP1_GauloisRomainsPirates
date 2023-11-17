@@ -16,8 +16,6 @@ public class Romain extends Humain implements Meeting {
         } else if (!this.mieuxGrade((Romain) r)) {
             System.out.println(" C’est à moi à te saluer " +((Romain) r).grade + r.getNom()+", je suis "+this.getNom());;
         }
-
-
     }
 
     public Boolean mieuxGrade(Romain r) {
@@ -29,5 +27,11 @@ public class Romain extends Humain implements Meeting {
 
         }
         return bo;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "grade=" + grade ;
     }
 }

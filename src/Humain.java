@@ -25,9 +25,8 @@ public class Humain {
 
     @Override
     public String toString() {
-        return "Humain{" +
+        return getClass().getSimpleName()+ ": "+
                 "nom='" + nom + '\'' +
-                ", force=" + force +
-                '}';
+                ", force=" + force +'\'';
     }
 }

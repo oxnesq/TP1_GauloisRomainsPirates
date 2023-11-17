@@ -9,7 +9,21 @@ public class CampRomain {
         this.chef = chef;
     }
 
+    public CampRomain(Romain chef) {
+        this.chef = chef;
+    }
+
     public void addRomain(Romain r){
         lesRomains.add(r);
     }
+
+    @Override
+    public String toString() {
+        return "CampRomain{" +
+                "lesRomains=" + lesRomains +
+                ", chef=" + chef +
+                '}';
+    }
 }
+
+
