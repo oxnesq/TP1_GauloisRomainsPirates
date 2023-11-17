@@ -18,4 +18,5 @@ public class Gaulois extends Humain implements Meeting{
         return "Gaulois :"+this.getNom();
     }
 
+
 }
