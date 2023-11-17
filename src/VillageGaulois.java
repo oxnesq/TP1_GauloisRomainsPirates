@@ -17,7 +17,7 @@ public class VillageGaulois {
     public String toString(){
         String v="Village: \n";
         for (Gaulois g : lesGaulois){
-            g=v+g.toString();
+            v=v+g.toString();
         }
         return v;
     }
