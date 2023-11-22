@@ -10,12 +10,16 @@ public class Gaulois extends Humain implements Meeting{
             this.force=1;
         }
     }
+    public String getMetier(){
+        return metier;
+    }
     public void meet(Humain g){
-        String hello="Bonjour, je suis "+ this.getNom() +"\n Bonjour" +this.getNom() +", moi c’est " + g.getNom();
+       System.out.println("Bonjour, je suis "+ this.getNom() +"\n Bonjour " +this.getNom() +", moi c’est " + g.getNom());
+
     }
 
     public String toString(){
-        return "Gaulois :"+this.getNom();
+        return "Gaulois : "+this.getNom()+"/ force : " +this.getForce()+ "/ métier : "+this.getMetier();
     }
 
 

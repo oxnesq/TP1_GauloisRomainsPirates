@@ -9,16 +9,22 @@ public class VillageGaulois {
         this.lesGaulois = lesGaulois;
         this.chef = chef;
     }
+    public Gaulois getGaulois(int i){
+
+        return lesGaulois.get(i);
+    }
+    public int size(){
+        return lesGaulois.size();
+    }
 
     public void addGaulois(Gaulois g){
         lesGaulois.add(g);
     }
 
-    public String toString(){
-        String v="Village: \n";
-        for (Gaulois g : lesGaulois){
-            v=v+g.toString();
-        }
-        return v;
+    public String toString() {
+        return "VillageGaulois{" +
+                "les Gaulois=" + lesGaulois +
+                ", chef=" + chef +
+                '}';
     }
 }
