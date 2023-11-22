@@ -19,7 +19,7 @@ public class Main {
         villageGaulois.addGaulois(new Gaulois("Tragicomix", "beau gosse"));
         villageGaulois.addGaulois(new Gaulois("Ordralbabétix", "poissonnier"));
         villageGaulois.addGaulois(new Gaulois("Falbala", "fiancée"));
-        villageGaulois.addGaulois(new Druide("Panoramix", "druide", 5,8));
+        villageGaulois.addGaulois(new Druide("Panoramix", "druide", 2,8));
 
         System.out.println(villageGaulois);
         Abraracourcix.meet(villageGaulois.getGaulois(r.nextInt(villageGaulois.size()-1)));

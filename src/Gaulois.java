@@ -1,6 +1,7 @@
 public class Gaulois extends Humain implements Meeting{
     private int force;
     private String metier;
+
     public Gaulois(String nom, String metier){
         super(nom);
         this.metier=metier;
@@ -15,7 +16,6 @@ public class Gaulois extends Humain implements Meeting{
     }
     public void meet(Humain g){
        System.out.println("Bonjour, je suis "+ this.getNom() +"\n Bonjour " +this.getNom() +", moi c’est " + g.getNom());
-
     }
 
     public String toString(){
