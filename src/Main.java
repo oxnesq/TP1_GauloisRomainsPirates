@@ -1,7 +1,10 @@
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Bataille");
+
+        Random r = new Random();
 
         Gaulois Abraracourcix = new Gaulois ("Abraracourcix", "chef");
         VillageGaulois villageGaulois=new VillageGaulois(Abraracourcix);
@@ -29,7 +32,9 @@ public class Main {
         campRomain.addRomain(new Romain("Chorus", Grade.CENTURION));
         campRomain.addRomain(new Romain("Milexcus", Grade.LEGIONNAIRE));
 
-//push
+        System.out.println(campRomain);
+        caius.meet(campRomain.getRomain(r.nextInt(campRomain.size()-1)));
+
 
     }
 

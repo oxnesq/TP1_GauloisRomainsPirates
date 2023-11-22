@@ -11,27 +11,31 @@ public class Romain extends Humain implements Meeting {
     }
 
     public void meet(Humain r) {
-        if (this.mieuxGrade((Romain) r)){
-            System.out.println("Je te salue " +((Romain) r).grade + r.getNom() + ", je suis " + this.getNom());
-        } else if (!this.mieuxGrade((Romain) r)) {
-            System.out.println(" C’est à moi à te saluer " +((Romain) r).grade + r.getNom()+", je suis "+this.getNom());;
-        }
+            System.out.println("Je te salue " +(mieuxGrade((Romain) r, this)) + ", je suis " + (moinsGrade((Romain) r, this).getNom()));
     }
 
-    public Boolean mieuxGrade(Romain r) {
-        Boolean bo = null;
-        if (this.grade.getValueGrade() < r.grade.getValueGrade()) {
-            bo = false;
-        } else if (this.grade.getValueGrade() > r.grade.getValueGrade()) {
-            bo = true;
-
+    public Romain mieuxGrade(Romain r1, Romain r2) {
+        if (Math.max(r1.grade.getValueGrade(),r2.grade.getValueGrade())==r1.grade.getValueGrade()){
+            return r2;
+        } else if (Math.max(r1.grade.getValueGrade(),r2.grade.getValueGrade())==r2.grade.getValueGrade()) {
+            return r1;
+        } else {
+            return null;
         }
-        return bo;
+    }
+    public Romain moinsGrade(Romain r1, Romain r2) {
+        if (Math.min(r1.grade.getValueGrade(),r2.grade.getValueGrade())==r1.grade.getValueGrade()){
+            return r2;
+        } else if (Math.min(r1.grade.getValueGrade(),r2.grade.getValueGrade())==r2.grade.getValueGrade()) {
+            return r1;
+        } else {
+            return null;
+        }
     }
 
     @Override
     public String toString() {
         return super.toString() +
-                "grade=" + grade ;
+                "grade= " + grade ;
     }
 }

@@ -17,6 +17,22 @@ public class CampRomain {
         lesRomains.add(r);
     }
 
+    public Romain getRomain(int i){
+        return lesRomains.get(i);
+    }
+
+    public Romain romainNom(String s){
+        for (Romain r : lesRomains){
+            if (r.getNom()==s)
+                return r;
+        }
+        return null;
+    }
+
+    public int size(){
+        return lesRomains.size();
+    }
+
     @Override
     public String toString() {
         return "CampRomain{" +
