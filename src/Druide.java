@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Druide extends Gaulois{
-    private int potion;
+    protected int potion;
 
     public Druide(String nom, String metier, int min, int max){
         super(nom, metier);
@@ -9,9 +10,15 @@ public class Druide extends Gaulois{
         this.potion = r.nextInt(min,max);
     }
 
-    public void preparerPotion(Gaulois g){
-        if (g.getForce()<5){
-            g.setForce(g.getForce()+potion);
-        }
+    public int getPotion(){
+        return potion;
     }
+
+    public void distribuerPotion(Gaulois g){
+            if (g.getForce() < 5) {
+                g.setForce(g.getForce() + potion);
+            }
+
+    }
+
 }

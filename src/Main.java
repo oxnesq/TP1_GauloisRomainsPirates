@@ -6,11 +6,10 @@ public class Main {
 
         Random r = new Random();
 
-        Gaulois Abraracourcix = new Gaulois ("Abraracourcix", "chef");
-        VillageGaulois villageGaulois=new VillageGaulois(Abraracourcix);
-
-        Gaulois Agecanonix = new Gaulois ("Agecanonix", "retraité");
-        villageGaulois.addGaulois(Agecanonix);
+        Gaulois abraracourcix = new Gaulois ("Abraracourcix", "chef");
+        VillageGaulois villageGaulois=new VillageGaulois(abraracourcix);
+        Gaulois agecanonix = new Gaulois ("Agecanonix", "retraité");
+        villageGaulois=new VillageGaulois(agecanonix);
         villageGaulois.addGaulois(new Gaulois("Assurancetourix", "barde"));
         villageGaulois.addGaulois(new Gaulois("Bonemine", "femme du chef"));
         villageGaulois.addGaulois(new Gaulois("Astérix", "héros"));
@@ -19,10 +18,17 @@ public class Main {
         villageGaulois.addGaulois(new Gaulois("Tragicomix", "beau gosse"));
         villageGaulois.addGaulois(new Gaulois("Ordralbabétix", "poissonnier"));
         villageGaulois.addGaulois(new Gaulois("Falbala", "fiancée"));
-        villageGaulois.addGaulois(new Druide("Panoramix", "druide", 2,8));
+        Druide panoramix= new Druide("Panoramix", "druide", 2,8);
+        villageGaulois.addGaulois(panoramix);
 
         System.out.println(villageGaulois);
-        Abraracourcix.meet(villageGaulois.getGaulois(r.nextInt(villageGaulois.size()-1)));
+        abraracourcix.meet(villageGaulois.getGaulois(r.nextInt(villageGaulois.size()-1)));
+
+        panoramix.distribuerPotion(abraracourcix);
+        panoramix.distribuerPotion(agecanonix);
+        System.out.println(abraracourcix.getForce());
+        System.out.println(agecanonix.getForce());
+
 
         Romain caius = new Romain ("Caius Obtus", Grade.CHEF);
         CampRomain campRomain=new CampRomain(caius);

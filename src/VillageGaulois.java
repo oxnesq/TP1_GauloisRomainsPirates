@@ -13,6 +13,11 @@ public class VillageGaulois {
 
         return lesGaulois.get(i);
     }
+
+    public ArrayList<Gaulois> getLesGaulois(){
+        return lesGaulois;
+    }
+
     public int size(){
         return lesGaulois.size();
     }
@@ -27,4 +32,6 @@ public class VillageGaulois {
                 ", chef=" + chef +
                 '}';
     }
+
+
 }
