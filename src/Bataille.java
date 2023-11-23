@@ -10,4 +10,20 @@ public abstract class Bataille {
     }
 
     public abstract void affronter();
+
+    public CampRomain getLesRomains() {
+        return lesRomains;
+    }
+
+    public void setLesRomains(CampRomain lesRomains) {
+        this.lesRomains = lesRomains;
+    }
+
+    public VillageGaulois getLesGaulois() {
+        return lesGaulois;
+    }
+
+    public void setLesGaulois(VillageGaulois lesGaulois) {
+        this.lesGaulois = lesGaulois;
+    }
 }
