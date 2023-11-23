@@ -2,12 +2,14 @@ import java.util.Random;
 
 public class Romain extends Humain implements Meeting {
     private Grade grade;
+    private int forceBataille;
 
     public Romain(String nom, Grade grade) {
         super(nom);
         Random r = new Random();
         this.setForce(r.nextInt(1, 5));
         this.grade = grade;
+        this.forceBataille=getForce();
     }
 
     public void meet(Humain r) {
@@ -41,5 +43,13 @@ public class Romain extends Humain implements Meeting {
     public String toString() {
         return super.toString() +
                 "grade= " + grade ;
+    }
+
+    public int getForceBataille() {
+        return forceBataille;
+    }
+
+    public void setForceBataille(int forceBataille) {
+        this.forceBataille = forceBataille;
     }
 }

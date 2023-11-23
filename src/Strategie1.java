@@ -4,18 +4,31 @@ public class Strategie1 extends Bataille{
     }
 
     public void affronter(){
-        for (int i=0; i<getLesGaulois().size();i++){
-            if (getLesRomains().getRomain(i).getForce()!=0){
+        if (estTerminee()){
+            getLesRomains().reinitForce();
+            getLesGaulois().distribution();
+        }
 
+        for (int i=0; i<getLesRomains().size();i++){
+            if (getLesRomains().getRomain(i).getForce()!=0){
+                prendreUneBaffe(getLesGaulois().getGaulois(i), getLesRomains().getRomain(i));
             }
 
         }
-        getLesGaulois().getGaulois();
 
     }
 
+    public Boolean estTerminee(){
+        for (int i=0; i<getLesRomains().size();i++){
+            if (getLesRomains().getRomain(i).getForceBataille()!=0){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void prendreUneBaffe(Gaulois g,Romain r){
-        r.setForce(r.getForce()*1/6);
+        r.setForceBataille(r.getForceBataille()*1/6);
         System.out.println("le gaulois"+g+"a baffé"+r);
         g.setForce(g.getForce()- r.getForce());
     }

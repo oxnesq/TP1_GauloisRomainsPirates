@@ -44,6 +44,12 @@ public class CampRomain {
                 ", chef=" + chef +
                 '}';
     }
+
+    public void reinitForce(){
+        for (Romain r : lesRomains){
+            r.setForceBataille(r.getForce());
+        }
+    }
 }
 
 
