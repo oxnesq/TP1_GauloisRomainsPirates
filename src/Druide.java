@@ -16,9 +16,15 @@ public class Druide extends Gaulois{
         return potion;
     }
 
+    public int getMin(){
+        return min;
+    }
+
+    public int getMax(){
+        return max;
+    }
+
     public void distribuerPotion(Gaulois g) {
-        Random r = new Random();
-        potion = r.nextInt(min, max);
         if (g.getForce() < 5) {
             g.setForce(g.getForce() + potion);
         }
