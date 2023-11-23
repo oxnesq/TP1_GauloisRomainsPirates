@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public abstract class Bataille {
     private CampRomain lesRomains;
     private VillageGaulois lesGaulois;
-    private ArrayList<Gaulois> lesCombatantsGaulois;
-    private ArrayList<Romain> lesPerdantsRomains;
+    protected ArrayList<Gaulois> lesCombatantsGaulois;
+    protected ArrayList<Romain> lesPerdantsRomains;
 
     public Bataille(CampRomain lesRomains, VillageGaulois lesGaulois) {
         this.lesRomains = lesRomains;
