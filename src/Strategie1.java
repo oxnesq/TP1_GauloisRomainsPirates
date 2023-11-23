@@ -10,7 +10,7 @@ public class Strategie1 extends Bataille{
             }
 
         }
-        getLesGaulois().getGaulois()
+        getLesGaulois().getGaulois();
 
     }
 
