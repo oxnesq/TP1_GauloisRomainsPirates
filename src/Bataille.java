@@ -11,7 +11,9 @@ public abstract class Bataille {
         this.lesGaulois = lesGaulois;
         this.lesCombatantsGaulois=new ArrayList<>();
         this.lesPerdantsRomains=new ArrayList<>();
+    }
 
+    public void implementationDesCombatants(){
         for (Gaulois g : lesGaulois.getLesGaulois()) {
             if (g.getMetier() != "Druide" || g.getMetier() != "Chef") {
                 lesCombatantsGaulois.add(g);
@@ -22,9 +24,7 @@ public abstract class Bataille {
                 lesPerdantsRomains.add(r);
             }
         }
-
     }
-
     public abstract void affronter();
 
     public CampRomain getLesRomains() {
