@@ -1,4 +1,4 @@
-public class Gaulois extends Humain implements Meeting{
+public class Gaulois extends Humain implements Meeting, Comparable<Gaulois> {
     private int force;
     private String metier;
 
@@ -19,8 +19,16 @@ public class Gaulois extends Humain implements Meeting{
     }
 
     public String toString(){
-        return "Gaulois : "+this.getNom()+"/ force : " +this.getForce()+ "/ métier : "+this.getMetier();
+        return "Gaulois : "+this.getNom()+" force : " +this.getForce()+ " métier : "+this.getMetier();
     }
 
+    public int compareTo(Gaulois o) {
+        int ret = 0;
+        if (this.getForce() <= o.getForce())
+            ret = -1;
+        if (this.getForce() >= o.getForce())
+            ret = 1;
+        return ret;
+    }
 
 }
