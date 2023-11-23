@@ -14,6 +14,11 @@ public class VillageGaulois {
         return lesGaulois.get(i);
     }
 
+    public Gaulois getChef(){
+
+        return chef;
+    }
+
     public ArrayList<Gaulois> getLesGaulois(){
         return lesGaulois;
     }
