@@ -21,6 +21,10 @@ public class CampRomain {
         return lesRomains.get(i);
     }
 
+    public ArrayList<Romain> getLesRomains(){
+        return lesRomains;
+    }
+
     public Romain romainNom(String s){
         for (Romain r : lesRomains){
             if (r.getNom()==s)

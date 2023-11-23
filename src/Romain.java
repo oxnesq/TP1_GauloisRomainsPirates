@@ -33,6 +33,10 @@ public class Romain extends Humain implements Meeting {
         }
     }
 
+    public Grade getGrade(){
+        return grade;
+    }
+
     @Override
     public String toString() {
         return super.toString() +
