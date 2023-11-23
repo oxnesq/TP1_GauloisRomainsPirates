@@ -4,7 +4,13 @@ public class Strategie1 extends Bataille{
     }
 
     public void affronter(){
+        for (int i=0; i<getLesGaulois().size();i++){
+            if (getLesRomains().getRomain(i).getForce()!=0){
 
+            }
+
+        }
+        getLesGaulois().getGaulois()
 
     }
 
