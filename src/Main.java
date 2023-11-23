@@ -44,6 +44,9 @@ public class Main {
         System.out.println(campRomain);
         caius.meet(campRomain.getRomain(r.nextInt(campRomain.size()-1)));
 
+        Strategie1 bat = new Strategie1(campRomain,villageGaulois) ;
+        bat.affronter();
+
 
     }
 
