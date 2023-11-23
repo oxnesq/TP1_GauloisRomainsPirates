@@ -24,13 +24,9 @@ public class Main {
         System.out.println(villageGaulois);
         abraracourcix.meet(villageGaulois.getGaulois(r.nextInt(villageGaulois.size()-1)));
 
-        panoramix.distribuerPotion(abraracourcix);
-        panoramix.distribuerPotion(agecanonix);
-        System.out.println(abraracourcix.getForce());
-        System.out.println(agecanonix.getForce());
+        villageGaulois.distribution();
 
         for (Gaulois g : villageGaulois.getLesGaulois()){
-            panoramix.distribuerPotion(g);
             System.out.println(g.getForce());
         }
 

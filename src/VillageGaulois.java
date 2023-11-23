@@ -39,5 +39,22 @@ public class VillageGaulois {
                 '}';
     }
 
+    public void distribution() {
+        Random r = new Random();
+        int pot = r.nextInt(getDruide().min,getDruide().max);
+        for (Gaulois g:lesGaulois){
+            getDruide().distribuerPotion(g, pot);
+        }
+
+
+    }
+
+    public Druide getDruide(){
+        for (Gaulois g  : lesGaulois){
+            if (g instanceof Druide) return (Druide) g;
+        }
+        return null;
+    }
+
 
 }

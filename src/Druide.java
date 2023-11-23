@@ -24,7 +24,8 @@ public class Druide extends Gaulois{
         return max;
     }
 
-    public void distribuerPotion(Gaulois g) {
+    public void distribuerPotion(Gaulois g, int i) {
+        potion=i;
         if (g.getForce() < 5) {
             g.setForce(g.getForce() + potion);
         }
