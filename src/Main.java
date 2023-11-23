@@ -29,6 +29,11 @@ public class Main {
         System.out.println(abraracourcix.getForce());
         System.out.println(agecanonix.getForce());
 
+        for (Gaulois g : villageGaulois.getLesGaulois()){
+            panoramix.distribuerPotion(g);
+            System.out.println(g.getForce());
+        }
+
 
         Romain caius = new Romain ("Caius Obtus", Grade.CHEF);
         CampRomain campRomain=new CampRomain(caius);
