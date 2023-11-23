@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Bataille {
+public abstract class Bataille {
     private CampRomain lesRomains;
     private VillageGaulois lesGaulois;
 
@@ -8,4 +8,6 @@ public class Bataille {
         this.lesRomains = lesRomains;
         this.lesGaulois = lesGaulois;
     }
+
+    public abstract void affronter();
 }
