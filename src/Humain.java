@@ -1,4 +1,4 @@
-public class Humain {
+public abstract class Humain implements Meeting{
     private String nom;
     private int force;
 
@@ -29,4 +29,7 @@ public class Humain {
                 "nom='" + nom + '\'' +
                 ", force=" + force +'\'';
     }
+
+    @Override
+    public abstract void meet(Humain h) ;
 }

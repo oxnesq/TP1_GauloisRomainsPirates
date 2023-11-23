@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Romain extends Humain implements Meeting {
+public class Romain extends Humain {
     private Grade grade;
     private int forceBataille;
 

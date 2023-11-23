@@ -1,4 +1,4 @@
-public class Gaulois extends Humain implements Meeting, Comparable<Gaulois> {
+public class Gaulois extends Humain implements Comparable<Gaulois> {
     private int force;
     private String metier;
 
