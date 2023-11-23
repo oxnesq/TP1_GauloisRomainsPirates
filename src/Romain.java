@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Romain extends Humain {
     private Grade grade;
-    private int forceBataille;
+    private float forceBataille;
 
     public Romain(String nom, Grade grade) {
         super(nom);
@@ -45,11 +45,11 @@ public class Romain extends Humain {
                 "grade= " + grade ;
     }
 
-    public int getForceBataille() {
+    public float getForceBataille() {
         return forceBataille;
     }
 
-    public void setForceBataille(int forceBataille) {
+    public void setForceBataille(float forceBataille) {
         this.forceBataille = forceBataille;
     }
 }

@@ -21,8 +21,7 @@ public class Strategie1 extends Bataille {
 
     public Boolean estTerminee() {
         for (int i = 0; i < getLesRomains().size(); i++) {
-            if (getLesRomains().getRomain(i).getForceBataille() != 0) {
-                System.out.println("la");
+            if (getLesRomains().getRomain(i).getForceBataille() > 0) {
                 return false;
             }
         }
@@ -30,9 +29,14 @@ public class Strategie1 extends Bataille {
     }
 
     public void prendreUneBaffe(Gaulois g, Romain r) {
-        r.setForceBataille(r.getForceBataille() * 1 / 6);
+        r.setForceBataille(r.getForceBataille()-(Math.round( (float) g.getForce() / 6)) );
         System.out.println("le gaulois : " + g + " a baffé " + r);
-        g.setForce(g.getForce() - r.getForce());
+        if (Math.max(0,g.getForce() - r.getForce())==0) {
+            getLesGaulois().distribution();
+        } else {
+            g.setForce(g.getForce() - r.getForce());
+        }
+
     }
 
 
