@@ -11,7 +11,6 @@ public class Strategie2 extends Bataille {
         TreeSet<Gaulois> lesGauloisForts=new TreeSet<>();
         for (Gaulois g :lesCombatantsGaulois){
                 lesGauloisForts.add(g);
-            }
         }
     }
     public void affronter(){

@@ -24,7 +24,7 @@ public class Gaulois extends Humain implements Comparable<Gaulois> {
 
     public int compareTo(Gaulois o) {
         int ret = 0;
-        if (this.getForce() <= o.getForce())
+        if (this.getForce() < o.getForce())
             ret = -1;
         if (this.getForce() >= o.getForce())
             ret = 1;
