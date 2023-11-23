@@ -46,6 +46,7 @@ public class Main {
 
         Strategie1 bat = new Strategie1(campRomain,villageGaulois) ;
         bat.affronter();
+        bat.affronter();
 
 
     }
