@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Strategie1 extends Bataille {
     public Strategie1(CampRomain lesRomains, VillageGaulois lesGaulois) {
         super(lesRomains, lesGaulois);
@@ -5,38 +7,41 @@ public class Strategie1 extends Bataille {
 
     public void affronter() {
         if (estTerminee()) {
-            getLesRomains().reinitForce();
-            getLesGaulois().distribution();
-        }
-        while (!estTerminee()) {
-            for (int i = 0; i < getLesRomains().size(); i++) {
-                if (getLesRomains().getRomain(i).getForce() != 0) {
-                    prendreUneBaffe(getLesGaulois().getGaulois(i), getLesRomains().getRomain(i));
-                }
+            reinitForce();
+            //distribution();
+        } else {
+            while (!estTerminee()) {
+                for (int i = 0; i < getBigSize(); i++) {
+                    if (getLesPerdantsRomains().get(i%getLittleSize()).getForce() > 0) {
+                        prendreUneBaffe(getGaulois(i%getLittleSize()), getRomain(i%getLittleSize())); // !!!
+                        //distribution();
+                    }
 
+                }
             }
         }
 
     }
 
-    public Boolean estTerminee() {
-        for (int i = 0; i < getLesRomains().size(); i++) {
-            if (getLesRomains().getRomain(i).getForceBataille() > 0) {
+    public Boolean estTerminee() { // !!!!!
+        for (int i = 0; i < getLesPerdantsRomains().size(); i++) {
+            if (getRomain(i).getForceBataille() > 0) {
                 return false;
             }
         }
+        for (int i = 0; i < getLesCombatantsGaulois().size(); i++) {
+            if (getGaulois(i).getForce() > 0) {
+                return false;
+            }
+        }
+        System.out.println("Le jeu est termine");
         return true;
     }
 
     public void prendreUneBaffe(Gaulois g, Romain r) {
-        r.setForceBataille(r.getForceBataille()-(Math.round( (float) g.getForce() / 6)) );
+        r.setForceBataille(((float)r.getForceBataille() - ((float) g.getForce() / 6)));
         System.out.println("le gaulois : " + g + " a baffé " + r);
-        if (Math.max(0,g.getForce() - r.getForce())==0) {
-            getLesGaulois().distribution();
-        } else {
-            g.setForce(g.getForce() - r.getForce());
-        }
-
+        g.setForce(((float)Math.max(0, g.getForce() - ((float)r.getForce()))));
     }
 
 

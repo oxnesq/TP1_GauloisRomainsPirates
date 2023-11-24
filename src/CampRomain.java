@@ -17,10 +17,6 @@ public class CampRomain {
         lesRomains.add(r);
     }
 
-    public Romain getRomain(int i){
-        return lesRomains.get(i);
-    }
-
     public ArrayList<Romain> getLesRomains(){
         return lesRomains;
     }
@@ -45,10 +41,8 @@ public class CampRomain {
                 '}';
     }
 
-    public void reinitForce(){
-        for (Romain r : lesRomains){
-            r.setForceBataille(r.getForce());
-        }
+    public Romain getRomain(int i){
+        return getLesRomains().get(i);
     }
 }
 

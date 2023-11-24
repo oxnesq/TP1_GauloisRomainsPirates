@@ -1,8 +1,8 @@
 public abstract class Humain implements Meeting{
     private String nom;
-    private int force;
+    private float force;
 
-    public Humain(String nom, int force) {
+    public Humain(String nom, float force) {
         this.nom = nom;
         this.force = force;
     }
@@ -15,11 +15,11 @@ public abstract class Humain implements Meeting{
         return nom;
     }
 
-    public int getForce() {
+    public float getForce() {
         return force;
     }
 
-    public void setForce(int force) {
+    public void setForce(float force) {
         this.force = force;
     }
 

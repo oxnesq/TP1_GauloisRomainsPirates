@@ -42,7 +42,8 @@ public class Romain extends Humain {
     @Override
     public String toString() {
         return super.toString() +
-                "grade= " + grade ;
+                " grade= " + grade +
+                " forceBataille= " + forceBataille;
     }
 
     public float getForceBataille() {

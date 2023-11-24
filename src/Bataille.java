@@ -1,19 +1,15 @@
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Random;
 
 public abstract class Bataille {
-    private CampRomain lesRomains;
-    private VillageGaulois lesGaulois;
     protected ArrayList<Gaulois> lesCombatantsGaulois;
     protected ArrayList<Romain> lesPerdantsRomains;
 
     public Bataille(CampRomain lesRomains, VillageGaulois lesGaulois) {
-        this.lesRomains = lesRomains;
-        this.lesGaulois = lesGaulois;
         this.lesCombatantsGaulois=new ArrayList<>();
         this.lesPerdantsRomains=new ArrayList<>();
-    }
 
-    public void implementationDesCombatants(){
         for (Gaulois g : lesGaulois.getLesGaulois()) {
             if (g.getMetier() != "Druide" || g.getMetier() != "Chef") {
                 lesCombatantsGaulois.add(g);
@@ -24,22 +20,58 @@ public abstract class Bataille {
                 lesPerdantsRomains.add(r);
             }
         }
+
     }
+
+    public int getBigSize(){
+        if (lesPerdantsRomains.size() > lesCombatantsGaulois.size()){
+            return lesPerdantsRomains.size();
+        } else if (lesPerdantsRomains.size()< lesCombatantsGaulois.size()) {
+            return lesCombatantsGaulois.size();
+        } else {
+            return 0;
+        }
+
+    }public int getLittleSize(){
+        if (lesPerdantsRomains.size()< lesCombatantsGaulois.size()){
+            return lesPerdantsRomains.size();
+        } else if (lesPerdantsRomains.size()> lesCombatantsGaulois.size()) {
+            return lesCombatantsGaulois.size();
+        } else {
+            return 0;
+        }
+
+    }
+
+    public Gaulois getGaulois(int i) {
+        return getLesCombatantsGaulois().get(i);
+    }
+
+    public Romain getRomain(int i){
+        return getLesPerdantsRomains().get(i);
+    }
+
+    public void reinitForce(){
+        for (Romain r : lesPerdantsRomains){
+            r.setForceBataille(r.getForce());
+        }
+    }
+
     public abstract void affronter();
 
-    public CampRomain getLesRomains() {
-        return lesRomains;
+    public ArrayList<Gaulois> getLesCombatantsGaulois() {
+        return lesCombatantsGaulois;
     }
 
-    public void setLesRomains(CampRomain lesRomains) {
-        this.lesRomains = lesRomains;
+    public void setLesCombatantsGaulois(ArrayList<Gaulois> lesCombatantsGaulois) {
+        this.lesCombatantsGaulois = lesCombatantsGaulois;
     }
 
-    public VillageGaulois getLesGaulois() {
-        return lesGaulois;
+    public ArrayList<Romain> getLesPerdantsRomains() {
+        return lesPerdantsRomains;
     }
 
-    public void setLesGaulois(VillageGaulois lesGaulois) {
-        this.lesGaulois = lesGaulois;
+    public void setLesPerdantsRomains(ArrayList<Romain> lesPerdantsRomains) {
+        this.lesPerdantsRomains = lesPerdantsRomains;
     }
 }

@@ -10,25 +10,21 @@ public class VillageGaulois {
         this.lesGaulois = lesGaulois;
         this.chef = chef;
     }
-    public Gaulois getGaulois(int i){
 
-        return lesGaulois.get(i);
-    }
-
-    public Gaulois getChef(){
+    public Gaulois getChef() {
 
         return chef;
     }
 
-    public ArrayList<Gaulois> getLesGaulois(){
+    public ArrayList<Gaulois> getLesGaulois() {
         return lesGaulois;
     }
 
-    public int size(){
+    public int size() {
         return lesGaulois.size();
     }
 
-    public void addGaulois(Gaulois g){
+    public void addGaulois(Gaulois g) {
         lesGaulois.add(g);
     }
 
@@ -41,19 +37,25 @@ public class VillageGaulois {
 
     public void distribution() {
         Random r = new Random();
-        int pot = r.nextInt(getDruide().min,getDruide().max);
-        for (Gaulois g:lesGaulois){
-            getDruide().distribuerPotion(g, pot);
+        float pot = r.nextInt(getDruide().min, getDruide().max);
+        for (Gaulois g : lesGaulois) {
+            if (g.getForce() < 5) {
+                g.setForce(g.getForce() + pot);
+            }
         }
 
 
     }
 
-    public Druide getDruide(){
-        for (Gaulois g  : lesGaulois){
+    public Druide getDruide() {
+        for (Gaulois g : lesGaulois) {
             if (g instanceof Druide) return (Druide) g;
         }
         return null;
+    }
+
+    public Gaulois getGaulois(int i) {
+        return getLesGaulois().get(i);
     }
 
 
