@@ -34,13 +34,5 @@ public class Strategie1 extends Bataille {
         return bo;
     }
 
-    public void prendreUneBaffe(Gaulois g, Romain r) {
-        if (r.getForceBataille() > 0) {
-            r.setForceBataille(((float) Math.max(0, r.getForceBataille() - ((float) g.getForce() / 6))));
-            System.out.println("le gaulois : " + g + " a baffé " + r);
-            g.setForce(((float) Math.max(0, g.getForce() - ((float) r.getForce()))));
-        }
-    }
-
 
 }
