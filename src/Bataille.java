@@ -5,14 +5,17 @@ import java.util.Random;
 public abstract class Bataille {
     protected ArrayList<Gaulois> lesCombatantsGaulois;
     protected ArrayList<Romain> lesPerdantsRomains;
+    private Druide druide;
 
     public Bataille(CampRomain lesRomains, VillageGaulois lesGaulois) {
-        this.lesCombatantsGaulois=new ArrayList<>();
-        this.lesPerdantsRomains=new ArrayList<>();
+        this.lesCombatantsGaulois=new ArrayList<Gaulois>();
+        this.lesPerdantsRomains=new ArrayList<Romain>();
 
         for (Gaulois g : lesGaulois.getLesGaulois()) {
-            if (g.getMetier() != "Druide" || g.getMetier() != "Chef") {
+            if (g.getMetier() != "druide" || g.getMetier() != "chef") {
                 lesCombatantsGaulois.add(g);
+            } else if (g.getMetier() == "druide"){
+                this.druide= (Druide) g;
             }
         }
         for (Romain r : lesRomains.getLesRomains()) {
@@ -21,6 +24,23 @@ public abstract class Bataille {
             }
         }
 
+    }
+
+    public void distribution() {
+        Random r = new Random();
+        float pot = r.nextInt(getDruide().min, getDruide().max);
+        for (Gaulois g : getLesCombatantsGaulois()) {
+            if (g.getForce() < 5) {
+                g.setForce(g.getForce() + pot);
+            }
+        }
+    }
+
+    public Druide getDruide() {
+        for (Gaulois g : getLesCombatantsGaulois()) {
+            if (g instanceof Druide) return (Druide) g;
+        }
+        return null;
     }
 
     public int getBigSize(){

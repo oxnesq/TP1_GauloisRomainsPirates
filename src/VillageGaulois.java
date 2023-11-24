@@ -43,8 +43,6 @@ public class VillageGaulois {
                 g.setForce(g.getForce() + pot);
             }
         }
-
-
     }
 
     public Druide getDruide() {
